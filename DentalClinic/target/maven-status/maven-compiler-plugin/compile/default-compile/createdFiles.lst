@@ -1,0 +1,8 @@
+logic\Dentist.class
+logic\Shift.class
+logic\Pacient.class
+logic\Users.class
+logic\Person.class
+logic\Responsible.class
+logic\Schedule.class
+logic\Secretary.class
