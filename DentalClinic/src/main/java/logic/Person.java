@@ -1,25 +1,50 @@
 package logic;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class Person {
+@Entity
+@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
+public class Person implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_;
     private String dni;
     private String name;
     private String lastname;
     private String telephone;
     private String direction;
+    @Temporal(TemporalType.DATE)
     private Date birthday;
 
     public Person() {
     }
 
-    public Person(String dni, String name, String lastname, String telephone, String direction, Date birthday) {
+    public Person(int id_, String dni, String name, String lastname, String telephone, String direction, Date birthday) {
+        this.id_ = id_;
         this.dni = dni;
         this.name = name;
         this.lastname = lastname;
         this.telephone = telephone;
         this.direction = direction;
+        this.birthday = birthday;
+    }
+
+    public int getId_() {
+        return id_;
+    }
+
+    public void setId_(int id_) {
+        this.id_ = id_;
     }
 
     public String getDni() {

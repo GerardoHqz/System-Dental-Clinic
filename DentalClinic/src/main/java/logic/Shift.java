@@ -1,14 +1,30 @@
 package logic;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-public class Shift {
-    
+@Entity
+public class Shift implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id_shift;
     private Date shift_date;
     private String shift_hour;
     private String reason;
-
+    @ManyToOne
+    @JoinColumn(name="id_shift")
+    private Dentist dentist;
+    @ManyToOne
+    @JoinColumn(name="id_shift")
+    private Pacient pacient;
+    
+    
     public Shift() {
     }
 

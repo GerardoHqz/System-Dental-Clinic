@@ -1,34 +1,32 @@
 package logic;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-public class Pacient extends Person{
+@Entity
+public class Pacient extends Person implements Serializable{
     
-    private int id_patient;
+    //private int id_patient;
     private Boolean social_security;
     private String blood_type;
+    @OneToOne
     private Responsible responsible;
+    @OneToMany(mappedBy="pacient")
     private List<Shift> shifts;
 
     public Pacient() {
     }
 
-    public Pacient(int id_patient, Boolean social_security, String blood_type, Responsible responsible, List<Shift> shifts, String dni, String name, String lastname, String telephone, String direction, Date birthday) {
-        super(dni, name, lastname, telephone, direction, birthday);
-        this.id_patient = id_patient;
+    public Pacient(Boolean social_security, String blood_type, Responsible responsible, List<Shift> shifts, int id_, String dni, String name, String lastname, String telephone, String direction, Date birthday) {
+        super(id_, dni, name, lastname, telephone, direction, birthday);
         this.social_security = social_security;
         this.blood_type = blood_type;
         this.responsible = responsible;
         this.shifts = shifts;
-    }
-
-    public int getId_patient() {
-        return id_patient;
-    }
-
-    public void setId_patient(int id_patient) {
-        this.id_patient = id_patient;
     }
 
     public Boolean getSocial_security() {
