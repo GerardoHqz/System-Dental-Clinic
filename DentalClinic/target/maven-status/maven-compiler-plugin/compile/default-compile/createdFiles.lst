@@ -9,6 +9,7 @@ logic\Schedule.class
 persistence\ShiftJpaController.class
 logic\Responsible_.class
 persistence\exceptions\PreexistingEntityException.class
+servlets\SvUsers.class
 logic\Dentist_.class
 logic\Users.class
 logic\Person.class

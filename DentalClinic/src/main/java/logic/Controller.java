@@ -3,8 +3,11 @@ package logic;
 public class Controller {
     ControllerPersistence controlPersis = new ControllerPersistence();
     
-    public void creatUser(int id_,String username, String password, String role){
-        Users user = new Users(id_,username,password,role);
+    public void creatUser(String username, String password, String role){
+        Users user = new Users();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setRol(role);
         controlPersis.createUser(user);
     }
 }

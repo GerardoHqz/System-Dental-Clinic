@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import logic.Dentist;
 import logic.Pacient;
 
-@Generated(value="EclipseLink-2.7.12.v20230209-rNA", date="2024-01-24T22:52:12")
+@Generated(value="EclipseLink-2.7.12.v20230209-rNA", date="2024-01-25T20:47:37")
 @StaticMetamodel(Shift.class)
 public class Shift_ { 
 

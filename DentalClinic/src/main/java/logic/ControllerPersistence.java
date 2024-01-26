@@ -18,6 +18,10 @@ public class ControllerPersistence {
     ShiftJpaController shiftJPA = new ShiftJpaController();
     UsersJpaController usersJPA = new UsersJpaController();
 
+    public ControllerPersistence() {
+    }
+     
+    
     void createUser(Users user) {
         usersJPA.create(user);
     }
