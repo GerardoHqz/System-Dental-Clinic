@@ -18,10 +18,10 @@ public class Shift implements Serializable {
     private String shift_hour;
     private String reason;
     @ManyToOne
-    @JoinColumn(name="id_shift")
+    @JoinColumn(name="id_dentist")
     private Dentist dentist;
     @ManyToOne
-    @JoinColumn(name="id_shift")
+    @JoinColumn(name="id_pacient")
     private Pacient pacient;
     
     

@@ -3,6 +3,7 @@ persistence\ResponsibleJpaController.class
 logic\Shift.class
 logic\Pacient.class
 persistence\exceptions\IllegalOrphanException.class
+servlets\SvDeleteUser.class
 logic\Schedule_.class
 logic\Controller.class
 logic\Schedule.class
@@ -11,6 +12,7 @@ logic\Responsible_.class
 persistence\exceptions\PreexistingEntityException.class
 servlets\SvUsers.class
 logic\Dentist_.class
+servlets\SvUpdateUser.class
 logic\Users.class
 logic\Person.class
 logic\Users_.class

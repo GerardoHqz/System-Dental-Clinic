@@ -2,8 +2,6 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,28 +11,28 @@ import javax.servlet.http.HttpSession;
 import logic.Controller;
 import logic.Users;
 
-@WebServlet(name = "SvUsers", urlPatterns = {"/SvUsers"})
-public class SvUsers extends HttpServlet {
+@WebServlet(name = "SvUpdateUser", urlPatterns = {"/SvUpdateUser"})
+public class SvUpdateUser extends HttpServlet {
     
     Controller controller = new Controller();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Users> list_users = new ArrayList<Users>();
-        list_users = controller.getUsers();
+        int id_user = Integer.parseInt(request.getParameter("id"));
+        
+        Users users = controller.getUser(id_user);
         
         HttpSession mysession = request.getSession();
-        mysession.setAttribute("users",list_users);
+        mysession.setAttribute("update",users);
         
-        response.sendRedirect("showUsers.jsp");
-        
+        response.sendRedirect("updateUsers.jsp");
     }
 
     @Override
@@ -45,12 +43,20 @@ public class SvUsers extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
         
-        controller.creatUser(username, password, role);
+        Users user = (Users) request.getSession().getAttribute("update");
         
-        response.sendRedirect("index.jsp");
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setRol(role);
+        
+        controller.updateUser(user);
+        
+        response.sendRedirect("SvUsers");
+        
         
     }
 
+    
     @Override
     public String getServletInfo() {
         return "Short description";
