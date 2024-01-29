@@ -17,10 +17,7 @@
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" name="role"
                    placeholder="Role" value="<%= user.getRol()%>">
-        </div>
-        
-        -<!-- Logic users -->
-        
+        </div>        
     </div> 
     <button class="btn btn-primary btn-user btn-block" type="submit">
         Update User

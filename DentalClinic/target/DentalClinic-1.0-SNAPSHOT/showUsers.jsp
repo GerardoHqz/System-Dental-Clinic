@@ -1,6 +1,5 @@
 <%@page import="logic.Users"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Components/header.jsp" %>
 <%@include file="Components/body_part_1.jsp"%>

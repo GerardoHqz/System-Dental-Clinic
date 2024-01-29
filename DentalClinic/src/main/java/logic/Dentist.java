@@ -29,7 +29,7 @@ public class Dentist extends Person implements Serializable{
         this.schedule = schedule;
         this.shifts = shifts;
     }
-    
+
     public String getSpeciality() {
         return speciality;
     }
