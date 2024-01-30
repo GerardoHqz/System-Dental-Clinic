@@ -1,5 +1,6 @@
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\ScheduleJpaController.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\logic\Users.java
+C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvNotFound.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\logic\Person.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\SecretaryJpaController.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvDeleteUser.java
@@ -11,6 +12,7 @@ C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\p
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvUpdateDentist.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\UsersJpaController.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\logic\Shift.java
+C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvErrorHandler.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\ResponsibleJpaController.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\exceptions\IllegalOrphanException.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvUpdatePacient.java
@@ -21,6 +23,7 @@ C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\s
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\PersonJpaController.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\persistence\exceptions\NonexistentEntityException.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\logic\ControllerPersistence.java
+C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvLogout.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\logic\Pacient.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\servlets\SvDeleteDentist.java
 C:\Users\gerar\OneDrive\Documentos\NetBeansProjects\DentalClinic\src\main\java\logic\Dentist.java

@@ -1,5 +1,7 @@
+<%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="logic.Pacient"%>
+<%@page import="java.text.SimpleDateFormat" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Components/header.jsp" %>
 <%@include file="Components/body_part_1.jsp"%>
@@ -29,7 +31,6 @@
                             <th>Birthday</th>
                             <th>Insurance</th>
                             <th>Blood type</th>
-                            <th>Responsible</th>
                             <th style="width:210px">Action</th>
                         </tr>
                     </thead>
@@ -44,7 +45,6 @@
                             <th>Birthday</th>
                             <th>Insurance</th>
                             <th>Blood type</th>
-                            <th>Responsible</th>
                             <th style="width: 210px">Delete</th>
                         </tr>
                     </tfoot>
@@ -52,7 +52,13 @@
                         List<Pacient> list_patients = (List)request.getSession().getAttribute("patients");   
                     %>
                     <tbody>
-                        <%for (Pacient us: list_patients){ %>
+                        <% for (Pacient us: list_patients){ 
+                            Date birthdayDate = us.getBirthday();
+
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd", java.util.Locale.US);
+
+                            String formattedBirthday = sdf.format(birthdayDate); 
+                        %>
                         <tr>
                             <td><%= us.getId_() %></td>
                             <td><%= us.getDni() %></td>
@@ -60,10 +66,9 @@
                             <td><%= us.getLastname() %></td>
                             <td><%= us.getTelephone() %></td>
                             <td><%= us.getDirection() %></td>
-                            <td><%= us.getBirthday() %></td>
+                            <td><%= formattedBirthday %></td>
                             <td><%= us.getSocial_security() %></td>
                             <td><%= us.getBlood_type() %></td>
-                            <td><%= us.getResponsible() %></td>
 
                             <td style="display: flex; width:230px;">
                                 <form name="delete" action="SvDeletePatient" method="POST">

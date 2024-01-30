@@ -29,6 +29,7 @@ servlets\SvLogin.class
 logic\Pacient_.class
 logic\Person_.class
 servlets\SvNotFound.class
+servlets\SvErrorHandler.class
 logic\Secretary.class
 persistence\DentistJpaController.class
 logic\Dentist.class

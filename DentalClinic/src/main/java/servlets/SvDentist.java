@@ -1,8 +1,14 @@
 package servlets;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,8 +52,17 @@ public class SvDentist extends HttpServlet {
         String specialty = request.getParameter("specialty");
         String telephone = request.getParameter("telephone");
         String direction = request.getParameter("direction");
+        String birthdayString = request.getParameter("birthday");
         
-        controller.createDentist(dni,name,lastname,specialty,telephone,direction);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date birthday = null;
+        try {
+            birthday = sdf.parse(birthdayString);   
+        } catch (ParseException ex) {
+            Logger.getLogger(SvPatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        controller.createDentist(dni,name,lastname,specialty,telephone,direction,birthday);
         
         response.sendRedirect("highDentist.jsp");
         

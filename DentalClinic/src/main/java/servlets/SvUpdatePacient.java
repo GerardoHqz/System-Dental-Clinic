@@ -1,7 +1,12 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,13 +47,18 @@ public class SvUpdatePacient extends HttpServlet {
         String lastname = request.getParameter("lastname");
         String telephone = request.getParameter("telephone");
         String direction = request.getParameter("direction");
+        String birthdayString = request.getParameter("birthday");
         String security_social = request.getParameter("insurance");
-        Boolean insurance = false;
-        if ("SI".equalsIgnoreCase(security_social)) {
-            insurance = true;
-        }
+        boolean hasInsurance = "SI".equalsIgnoreCase(security_social);
         String blood_type = request.getParameter("bloodType");
-        //String responsible = request.getParameter("responsible");
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date birthday = null;
+        try {
+            birthday = sdf.parse(birthdayString);   
+        } catch (ParseException ex) {
+            Logger.getLogger(SvPatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         Pacient patient = (Pacient) request.getSession().getAttribute("update");
         
@@ -57,11 +67,13 @@ public class SvUpdatePacient extends HttpServlet {
         patient.setLastname(lastname);
         patient.setTelephone(telephone);
         patient.setDirection(direction);
-        patient.setSocial_security(insurance);
+        patient.setBirthday(birthday);
+        patient.setSocial_security(hasInsurance);
         patient.setBlood_type(blood_type);
-        //patient.setResponsible(responsible);
         
         controller.updatePatient(patient);
+        
+        response.sendRedirect("SvPatient");
         
     }
 

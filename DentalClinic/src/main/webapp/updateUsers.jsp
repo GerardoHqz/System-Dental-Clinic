@@ -15,9 +15,13 @@
                    placeholder="Password" value="<%= user.getPassword()%>" >
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" name="role"
-                   placeholder="Role" value="<%= user.getRol()%>">
-        </div>        
+            <select class="form-control form-control-user" name="role">
+                <option value="" selected>Role</option>
+                <option value="Doctor" <%= "Doctor".equals(user.getRol()) ? "selected" : ""%>>Doctor</option>
+                <option value="Secretary" <%= "Secretary".equals(user.getRol()) ? "selected" : ""%>>Secretary</option>
+                <option value="Director" <%= "Director".equals(user.getRol()) ? "selected" : ""%>>Director</option>  
+            </select>
+        </div>
     </div> 
     <button class="btn btn-primary btn-user btn-block" type="submit">
         Update User

@@ -1,8 +1,11 @@
+<%@page import="java.util.Date"%>
 <%@page import="logic.Dentist"%>
 <%@page import="java.util.List"%>
+<%@page import="java.text.SimpleDateFormat" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Components/header.jsp" %>
 <%@include file="Components/body_part_1.jsp"%>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -50,7 +53,13 @@
                     %>
                     
                      <tbody>
-                        <%for (Dentist us: list_dentist){ %>
+                        <%for (Dentist us: list_dentist){ 
+                            Date birthdayDate = us.getBirthday();
+
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd", java.util.Locale.US);
+
+                            String formattedBirthday = sdf.format(birthdayDate);
+                        %>
                         <tr>
                             <td><%= us.getId_() %></td>
                             <td><%= us.getDni() %></td>
@@ -59,7 +68,7 @@
                             <td><%= us.getSpeciality() %></td>
                             <td><%= us.getTelephone() %></td>
                             <td><%= us.getDirection() %></td>
-                            <td><%= us.getBirthday() %></td>
+                            <td><%= formattedBirthday %></td>
 
                             <td style="display: flex; width:230px;">
                                 <form name="delete" action="SvDeleteDentist" method="POST">

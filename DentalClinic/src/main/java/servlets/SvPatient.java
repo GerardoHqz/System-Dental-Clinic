@@ -1,9 +1,14 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,16 +51,23 @@ public class SvPatient extends HttpServlet {
         String lastname = request.getParameter("lastname");
         String telephone = request.getParameter("telephone");
         String direction = request.getParameter("direction");
+        String birthdayString = request.getParameter("birthday");
         String security_social = request.getParameter("insurance");
         String blood_type = request.getParameter("bloodType");
-        boolean insurance = false;
-        if ("SI".equalsIgnoreCase(security_social)) {
-            insurance = true;
+        boolean hasInsurance = "SI".equalsIgnoreCase(security_social);
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");;
+        Date birthday = null;
+        try {
+            birthday = sdf.parse(birthdayString);   
+        } catch (ParseException ex) {
+            Logger.getLogger(SvPatient.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String responsible = request.getParameter("responsible");
+        System.out.println(birthdayString);
+        System.out.println(birthday);
         
-        controller.createPatient(dni,name,lastname,telephone,direction,insurance,blood_type,responsible);
+        controller.createPatient(dni,name,lastname,telephone,direction,birthday,hasInsurance,blood_type);
         
         response.sendRedirect("highPatient.jsp");
 

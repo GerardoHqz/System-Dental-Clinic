@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <%@include file="Components/header.jsp" %>
     <%@include file="Components/body_part_1.jsp"%>
     <div class="container-fluid">

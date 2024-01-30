@@ -20,18 +20,16 @@ public class SvLogout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate(); // Invalida la sesión existente
+        }
+        response.sendRedirect("login.jsp"); // Redirige a la página de login
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        HttpSession session = request.getSession(false);
-        if (session != null) {
-            session.invalidate(); // Invalida la sesión existente
-        }
-        response.sendRedirect("/login.jsp"); // Redirige a la página de login
     }
     
 

@@ -38,7 +38,7 @@ public class Controller {
         return controlPersis.getDentists();
     }
 
-    public void createDentist(String dni, String name, String lastname, String specialty, String telephone, String direction) {
+    public void createDentist(String dni, String name, String lastname, String specialty, String telephone, String direction, Date birthday) {
         Dentist dentist = new Dentist();
         dentist.setDni(dni);
         dentist.setName(name);
@@ -46,6 +46,7 @@ public class Controller {
         dentist.setSpeciality(specialty);
         dentist.setTelephone(telephone);
         dentist.setDirection(direction);
+        dentist.setBirthday(birthday);
         controlPersis.createDentist(dentist);
     }
 
@@ -66,16 +67,16 @@ public class Controller {
         return controlPersis.getPatients();
     }
 
-    public void createPatient(String dni, String name, String lastname, String telephone, String direction, boolean insurance, String blood_type, String responsible) {
+    public void createPatient(String dni, String name, String lastname, String telephone, String direction, Date birthday, boolean insurance, String blood_type) {
         Pacient patient = new Pacient();
         patient.setDni(dni);
         patient.setName(name);
         patient.setLastname(lastname);
         patient.setTelephone(telephone);
         patient.setDirection(direction);
+        patient.setBirthday(birthday);
         patient.setSocial_security(insurance);
         patient.setBlood_type(blood_type);
-        //patient.getResponsible();
 
         controlPersis.createPatient(patient);
     }

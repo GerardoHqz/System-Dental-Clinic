@@ -8,7 +8,7 @@ import logic.Schedule;
 import logic.Shift;
 import logic.Users;
 
-@Generated(value="EclipseLink-2.7.12.v20230209-rNA", date="2024-01-29T01:28:51")
+@Generated(value="EclipseLink-2.7.12.v20230209-rNA", date="2024-01-30T01:40:15")
 @StaticMetamodel(Dentist.class)
 public class Dentist_ extends Person_ {
 

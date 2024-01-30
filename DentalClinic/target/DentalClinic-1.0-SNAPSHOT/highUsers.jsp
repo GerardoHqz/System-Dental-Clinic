@@ -12,11 +12,15 @@
                    placeholder="Password">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" name="role"
-                   placeholder="Role">
+            <select class="form-control form-control-user" name="role">
+                <option value="">Role</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Secretary">Secretary</option>
+                <option value="Director">Director</option>
+            </select>
         </div>
         
-        -<!-- Logic users -->
+        <!-- Logic users -->
         
     </div> 
     <button class="btn btn-primary btn-user btn-block" type="submit">
