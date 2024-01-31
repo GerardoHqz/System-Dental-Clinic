@@ -25,14 +25,6 @@ The system provides a secure authentication system to ensure authorized access f
 - **Edit User:** Modify information for an existing user.
 - **Delete User:** Remove users who no longer require access to the system.
 
-### Consultation Schedules
-The system allows for the establishment of consultation schedules for dentists, facilitating efficient time management and appointment scheduling.
-
-### Appointments
-- **Schedule Appointments:** Users can schedule appointments for patients with specific dentists.
-- **View Appointments:** See a list of scheduled appointments, including details such as date, time, and assigned dentist.
-- **Edit Appointments:** Modify information for existing appointments as necessary.
-- **Delete Appointments:** Cancel appointments that are no longer valid or necessary.
 
 ## Project Configuration
 
