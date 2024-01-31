@@ -4,7 +4,7 @@
 <%@include file="Components/body_part_1.jsp"%>
 
 <% Users user = (Users)request.getSession().getAttribute("update"); %>
-<form class="user" action="SvUpdateUser" method="POST">
+<form class="" action="SvUpdateUser" method="POST">
     <div class="form-group col mx-3">
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" name="username"

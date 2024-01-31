@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Components/header.jsp" %>
 <%@include file="Components/body_part_1.jsp"%>
-<form class="user" action="SvUsers" method="POST">
+<form class="" action="SvUsers" method="POST">
     <div class="form-group col mx-3">
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" name="username"
